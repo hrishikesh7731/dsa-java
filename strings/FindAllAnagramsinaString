@@ -1,0 +1,27 @@
+//sortingVersion
+
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        int l=0,r=p.length()-1;
+        ArrayList<Integer>ans=new ArrayList<>();
+        HashSet<String>set=new HashSet<>();
+        char[] arr=p.toCharArray();
+        Arrays.sort(arr);
+        String Key= new String (arr);
+        set.add(Key);
+
+        while(r<s.length()){
+
+            char[] brr=s.substring(l,r+1).toCharArray();
+            Arrays.sort(brr);
+            String key=new String(brr);
+
+            if(set.contains(key)){
+                ans.add(l);
+            }
+            l++;
+            r++;
+        }
+        return ans;
+    }
+}
