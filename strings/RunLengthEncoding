@@ -1,0 +1,24 @@
+class Solution {
+    public static String encode(String s) {
+        
+       StringBuilder ans=new StringBuilder();
+       int n=s.length();
+       int i=0;
+       
+       while(i<n){
+           
+           char curr=s.charAt(i);
+           int count=0;
+           
+           while(i<n && s.charAt(i)==curr){
+               count++;
+               i++;
+           }
+           
+           ans.append(curr).append(count);
+       }
+       
+       return ans.toString();
+        
+    }
+}
