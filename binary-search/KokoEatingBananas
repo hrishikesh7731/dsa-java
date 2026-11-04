@@ -3,6 +3,7 @@ class Solution {
         
         int lo=1;
         int hi=0;
+
         for(int num :arr){
             hi=Math.max(num,hi);
         }
@@ -16,7 +17,8 @@ class Solution {
             }
             if(hours<=k){
                 hi=mid-1;
-            }else{
+            }
+            else{
                 lo=mid+1;
             }
         }
