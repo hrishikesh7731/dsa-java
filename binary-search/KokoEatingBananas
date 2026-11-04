@@ -1,0 +1,25 @@
+class Solution {
+    public int kokoEat(int[] arr, int k) {
+        
+        int lo=1;
+        int hi=0;
+        for(int num :arr){
+            hi=Math.max(num,hi);
+        }
+        
+        while(lo<=hi){
+            int mid=lo+(hi-lo)/2;
+            int hours=0;
+            
+            for(int num :arr){
+                hours+=Math.ceil((double)num/mid);
+            }
+            if(hours<=k){
+                hi=mid-1;
+            }else{
+                lo=mid+1;
+            }
+        }
+        return lo;
+    }
+}
